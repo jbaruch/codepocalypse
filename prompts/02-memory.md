@@ -1,4 +1,4 @@
-# Airline Loyalty Assistant Enhancement Task
+# Airline Loyalty Assistant Enhancement Task - Memory
 
 Enhance the existing Airline Loyalty Assistant web application by implementing conversation memory to provide a more personalized and contextual user experience.
 
@@ -13,26 +13,25 @@ The current application provides answers about airline loyalty programs using an
 ## Technical Requirements
 
 - Continue following **ALL** specifications in the `.windsurfrules` file
-- Use LangChain4j's conversation memory capabilities
+- Use LangChain4j's conversation memory capabilities, specifically `MessageWindowChatMemory.withMaxMessages(20)`
 - Implement a lightweight approach aligned with the project's minimalist philosophy
 - Maintain the existing simplified architecture and UI approach
 
 ## Implementation Guidelines
 
-1. **Session Management**:
-   - Implement a simple session identification mechanism
-   - Associate user conversations with their session
-   - Ensure conversation context persists throughout the session
+1. **Memory Implementation**:
+   - Create a **single application-wide conversation memory instance** using `MessageWindowChatMemory.withMaxMessages(20)`
+   - Follow the pattern from the official example: [ServiceWithMemoryExample.java](https://github.com/langchain4j/langchain4j-examples/blob/main/other-examples/src/main/java/ServiceWithMemoryExample.java)
+   - Store the memory as a private field in the `AssistantService` class
+   - Build a single AI assistant instance that uses this memory
 
-2. **Memory Implementation**:
-   - Create a conversation memory store compatible with LangChain4j
-   - Implement mechanisms to store and retrieve past messages
-   - Limit conversation history to a reasonable size to avoid context overload
+2. **Enhanced System Message**:
+   - Update the `AirlineAssistantAI` interface's system message to explicitly instruct the AI to remember user details
+   - Include specific instructions to remember names, preferences, and other personal information shared during the conversation
 
-3. **Enhanced Question Answering**:
-   - Update the existing question answering logic to incorporate conversation history
-   - Allow the LLM to reference previous exchanges when formulating responses
-   - Support follow-up questions that rely on previously established context
+3. **UI Enhancements**:
+   - Add a visual indicator when a conversation is active
+   - Modify prompts to encourage follow-up questions when in an active conversation
 
 4. **Response Improvement**:
    - Enable more natural conversation flows and contextual responses
@@ -40,7 +39,7 @@ The current application provides answers about airline loyalty programs using an
 
 ## User Experience
 
-- The UI should remain simple and unchanged from the user's perspective
+- The UI should remain simple and unchanged from the user's perspective except for conversation indicators
 - Users should be able to ask follow-up questions without restating context
 - The assistant should remember user preferences and information shared during the conversation
 
@@ -50,11 +49,12 @@ The current application provides answers about airline loyalty programs using an
 - Keep the core principles of minimalism and demo-readiness
 - Prioritize working functionality over architectural complexity
 - Ensure the application continues to start with a single command (`./gradlew quarkusDev`)
-- Use in-memory storage for session data in this demo implementation
+- Use in-memory storage for the conversation memory
 
 ## Testing Considerations
 
 - Test with multi-turn conversations to verify context retention
+- Try introducing yourself with "Hello, my name is [name]" and then ask "What's my name?"
 - Verify that the assistant correctly references previous parts of the conversation
 - Ensure the experience feels natural and continuous to users
 
