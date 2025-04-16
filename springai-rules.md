@@ -2,9 +2,9 @@
 
 ## 1. Language, Framework, and Build - FUNDAMENTAL PRINCIPLES
 
-This application is a LOCAL DEMO. 
+This application is a LOCAL DEMO.
 Simplicity is the PRIMARY GOAL - DELIBERATELY IGNORE production best practices when they conflict with simplicity.
-- 
+
 - Use Kotlin as the primary language for all new code
 - Use Gradle as the build tool, with the Gradle wrapper and Kotlin DSL
 - Use `gradle wrapper` command to generate wrapper files (DO NOT create wrapper files manually)
@@ -17,7 +17,7 @@ Simplicity is the PRIMARY GOAL - DELIBERATELY IGNORE production best practices w
 - Code Quality: Avoid deprecated APIs in Java/Kotlin.
 - Makefiles: Use Makefiles (with emoji and ASCII colors) for multi-step commands.
 
-### Framework 
+### Framework
 
 - Use the latest particular Spring Boot and Spring AI version. DO NOT change versions unless explicitly approved.
   - Spring Boot: 3.4.5-SNAPSHOT
@@ -28,14 +28,25 @@ Simplicity is the PRIMARY GOAL - DELIBERATELY IGNORE production best practices w
 - Dependency Management: Use BOMs for Spring dependencies to ensure compatibility.
 
 ### Dependencies (Hard Requirements):
-```
-"org.springframework.boot:spring-boot-starter-web"
-"org.springframework.boot:spring-boot-starter-actuator"
-"org.springframework.boot:spring-boot-starter-validation"
-"org.jetbrains.kotlin:kotlin-reflect"
-"org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-"com.fasterxml.jackson.module:jackson-module-kotlin"
-"org.springframework.ai:spring-ai-starter-model-openai:${springAiVersion}"
+
+```kotlin
+extra["springAiVersion"] = "1.0.0-M7"
+
+dependencies {
+  implementation("org.springframework.boot:spring-boot-starter-web")
+  implementation("org.springframework.ai:spring-ai-starter-model-openai")
+  implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+  implementation("org.jetbrains.kotlin:kotlin-reflect")
+  testImplementation("org.springframework.boot:spring-boot-starter-test")
+  testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+  testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+dependencyManagement {
+  imports {
+    mavenBom("org.springframework.ai:spring-ai-bom:${property("springAiVersion")}")
+  }
+}
 ```
 
 Use snapshots and milestones repositories for plugins and dependencies.

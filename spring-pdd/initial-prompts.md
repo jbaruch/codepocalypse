@@ -15,7 +15,8 @@ DO NOT use code snippets in the requirements doc and follow PRD format.
 
 ```
 Analyze the `docs/requirements.md` and create a detailed plan for implementing this project. 
-Write the plan to docs/plan.md file
+Write the plan to docs/plan.md file. try to avoid including code in plan doc. 
+but make use you use accurate classes based on specified version of spring api and documentation.
 ```
 
 ## Prompt 2
@@ -31,7 +32,8 @@ Write the task list to docs/tasks.md file
 ```
 Proceed implementing the application according to the tasks listed in docs/tasks.md. 
 Start with Phase 1. 
-Mark tasks as done [x] upon completion
+Mark tasks as done [x] upon completion only if the task is fully implemented and code compiles without errors.
+DO NOT start a new phase until i explicitly ask you
 ```
 
 ## References
