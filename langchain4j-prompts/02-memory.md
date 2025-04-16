@@ -1,4 +1,4 @@
-# Airline Loyalty Assistant Enhancement Task - Memory
+# Airline Loyalty Assistant Enhancement Task - Conversation Memory
 
 Enhance the existing Airline Loyalty Assistant web application by implementing conversation memory to provide a more personalized and contextual user experience.
 
