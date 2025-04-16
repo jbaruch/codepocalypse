@@ -1,4 +1,4 @@
-# Airline Loyalty Assistant RAG Enhancement Task - In-Memory RAG
+# Airline Loyalty Assistant Enhancement Task - In-Memory RAG
 
 Enhance the Airline Loyalty Assistant web application by implementing a robust Retrieval Augmented Generation (RAG) system using LangChain4j, focusing on:
 
