@@ -1,4 +1,4 @@
-# Airline Loyalty Assistant MCP Enhancement Task
+# Airline Loyalty Assistant Enhancement Task - MCP Integration
 
 Enhance the Airline Loyalty Assistant web application by implementing Model Context Protocol (MCP) support using LangChain4j, focusing on:
 
