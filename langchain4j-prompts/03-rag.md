@@ -21,6 +21,7 @@ Enhance the Airline Loyalty Assistant web application by implementing a robust R
    - Use LangChain4j's `UrlDocumentLoader` to load documents from airline websites
    - Create documents with proper source metadata for attribution
    - DO NOT implement custom document loading or processing logic
+   - DO NOT parse the documents using jsoup or similar, use UrlDocumentLoader instead
 
 2. **Knowledge Base Construction**:
    - Use LangChain4j's `DocumentSplitters` for text chunking
