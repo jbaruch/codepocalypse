@@ -12,17 +12,15 @@ This application is a LOCAL DEMO. Simplicity is the PRIMARY GOAL - DELIBERATELY 
 
 ### Dependency Versions (Hard Requirements):
 ```
-io.quarkus:quarkus-bom:3.11.1
-io.quarkus:quarkus-resteasy-reactive:3.11.1
-io.quarkus:quarkus-resteasy-reactive-jackson:3.11.1
-io.quarkus:quarkus-rest-client-reactive-jackson:3.11.1
-io.quarkus:quarkus-kotlin:3.11.1
-io.quarkus:quarkus-arc:3.11.1
-io.quarkus:quarkus-resteasy-reactive-qute:3.11.1
-org.jetbrains.kotlin:kotlin-stdlib:1.9.23
-dev.langchain4j:langchain4j:1.0.0-beta3
-dev.langchain4j:langchain4j-open-ai:1.0.0-beta3
-org.jboss.logging:jboss-logging:3.5.3.Final
+io.quarkus:quarkus-bom:3.23.0
+io.quarkus:quarkus-resteasy-reactive:3.23.0
+io.quarkus:quarkus-resteasy-reactive-jackson:3.23.0
+io.quarkus:quarkus-rest-client-reactive-jackson:3.23.0
+io.quarkus:quarkus-kotlin:3.23.0
+io.quarkus:quarkus-arc:3.23.0
+io.quarkus:quarkus-resteasy-reactive-qute:3.23.0
+dev.langchain4j:langchain4j:1.0.1
+dev.langchain4j:langchain4j-open-ai:1.0.1
 ```
 Use these exact versions unless a newer, stable release is explicitly approved.
 
@@ -35,7 +33,7 @@ Use these exact versions unless a newer, stable release is explicitly approved.
 - When in doubt, choose the simpler solution over the "cleaner" architecture
 
 ## 3. LangChain4j Integration - MANDATORY RULES
-- **ALWAYS CHECK OFFICIAL DOCUMENTATION FIRST**: Before writing any LangChain4j code, consult the [official documentation](https://docs.langchain4j.dev/) for the specific version being used (1.0.0-beta3).
+- **ALWAYS CHECK OFFICIAL DOCUMENTATION FIRST**: Before writing any LangChain4j code, consult the [official documentation](https://docs.langchain4j.dev/) for the specific version being used (1.0.1).
 - **VERIFY API SIGNATURES**: Package structures and method signatures in LangChain4j may change between versions. Always verify you're using the correct imports and method signatures.
 - **MODEL AGNOSTIC IMPLEMENTATION**: Design the integration to work with any LLM provider supported by LangChain4j, not just a specific provider.
 - **UNDERSTAND MESSAGE HANDLING**: Pay special attention to how messages (SystemMessage, UserMessage, AiMessage) are implemented in the specific version being used.
