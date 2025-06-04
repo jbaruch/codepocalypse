@@ -4,9 +4,9 @@ Implement a minimal, production-ready Airline Loyalty Assistant web application 
 
 ## Core Requirements
 
-- Follow **ALL** specifications in the `.windsurfrules` file at the root of the repository
-- The `.windsurfrules` file is the authoritative source for all implementation details
-- Any implementation decisions should defer to `.windsurfrules` when there is a conflict or ambiguity
+- Follow **ALL** specifications in the `.junie/guidelines.md` file at the root of the repository
+- The `.junie/guidelines.md` file is the authoritative source for all implementation details
+- Any implementation decisions should defer to `.junie/guidelines.md` when there is a conflict or ambiguity
 
 ## Application Overview
 
@@ -25,7 +25,7 @@ This is a simple web application where:
 
 ## Development Guidelines
 
-- **ALWAYS** check the `.windsurfrules` file for specific technical requirements
+- **ALWAYS** check the `.junie/guidelines.md` file for specific technical requirements
 - Prioritize simplicity and working code over architectural complexity
 - Ensure a zero-debugging, demo-ready delivery that starts with `./gradlew quarkusDev`
 - Maintain proper error handling and logging for a good user experience
